@@ -9,7 +9,7 @@
     <name>IOS automation</name>
     <description>bridge over the apple JS UIAutomation and the webkit remote debug protocol
         frameworks to make them compatible with a webdriver like architecture.Allows remote parallel
-        excecution using Selenium Grid2
+        execution using Selenium Grid2
     </description>
     <modules>
         <module>build</module>

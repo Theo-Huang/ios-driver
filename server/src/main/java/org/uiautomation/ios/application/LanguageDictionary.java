@@ -276,4 +276,8 @@ public class LanguageDictionary {
   public String getContentForKey(String key) {
     return content.get(key);
   }
+  
+  public Map<String, String> getContentMap(){
+    return this.content;
+  }
 }

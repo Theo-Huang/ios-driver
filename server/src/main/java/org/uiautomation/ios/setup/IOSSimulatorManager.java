@@ -66,7 +66,6 @@ public class IOSSimulatorManager implements IOSDeviceManager {
     bundleId = caps.getBundleId();
   }
 
-
   @Override
   public void setup() {
     DeviceType deviceType = caps.getDevice();
@@ -79,17 +78,15 @@ public class IOSSimulatorManager implements IOSDeviceManager {
 
     boolean putDefaultFirst = instrumentsIs50OrHigher;
 
-
     simulatorSettings.setVariation(deviceType, variation, desiredSDKVersion);
     simulatorSettings.setSimulatorScale(caps.getSimulatorScale());
 
     application.setDefaultDevice(deviceType, putDefaultFirst);
 
-
-    simulatorSettings.resetContentAndSettings();
-    simulatorSettings.setL10N(locale, language);
-    simulatorSettings.setKeyboardOptions();
-    simulatorSettings.setLocationPreference(/*whitelist*/true, bundleId);
+    //    simulatorSettings.resetContentAndSettings();
+    //    simulatorSettings.setL10N(locale, language);
+    //    simulatorSettings.setKeyboardOptions();
+    //    simulatorSettings.setLocationPreference(/*whitelist*/true, bundleId);
   }
 
   @Override
@@ -97,15 +94,11 @@ public class IOSSimulatorManager implements IOSDeviceManager {
     ClassicCommands.killall(SIMULATOR_PROCESS_NAME);
   }
 
-
   private String validateSDK(String sdk) {
     if (!sdks.contains(sdk)) {
       throw new WebDriverException("desired sdk " + sdk + " isn't installed. Installed :" + sdks);
     }
     return sdk;
   }
-
-
-
 
 }
